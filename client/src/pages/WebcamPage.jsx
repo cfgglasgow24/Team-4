@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import Webcam from 'react-webcam';
 
-function WebcamPage() {
+const WebcamPage = () => {
     const webcam = useRef(null);
     // const [count, setCount] = useState(0)
   
