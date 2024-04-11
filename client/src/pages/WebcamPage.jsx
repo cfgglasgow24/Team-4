@@ -108,7 +108,7 @@ return () => {
   console.log("Starting...");
   return (
     <div className='bg-black min-h-screen flex flex-col'>
-        <h1 className="text-white text-5xl text-center mb-8 mt-5">Quiz 2</h1>
+        <h1 className="text-white text-5xl text-center mb-8 mt-5">Gesture Quest</h1>
         <div className="flex">
             <div className="w-2/4">
                 <div className="gesture relative">
@@ -118,7 +118,7 @@ return () => {
                 <p className="text-white">Gestures</p>
             </div>
             <div className="w-2/4 flex items-center justify-center">
-                <div className="text-white text-9xl">A</div> {/* Replace 'A' with your desired letter */}
+                <div className="text-white text-9xl">N</div>
             </div>
         </div>
     </div>

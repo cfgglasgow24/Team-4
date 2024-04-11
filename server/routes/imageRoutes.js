@@ -1,9 +1,11 @@
-const express = require('express')
-const {
-    getAllImage,
-} = require('../controllers/imageController');
-const router = express.Router()
+const express = require('express');
+const { getAllImage, createUrl } = require('../controllers/imageController');
+const router = express.Router();
 
+// GET all images.
+router.get('/', getAllImage);
 
-// GET all sites.
-router.get('/', getAllSites);
+// POST a new image URL.
+router.post('/get_photos', createUrl);
+
+module.exports = router;

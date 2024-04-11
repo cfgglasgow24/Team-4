@@ -9,33 +9,26 @@ const Home = () => {
       <div className="homePageContents">
         <h1 className="text-white text-center text-bold mt-4 text-5xl">DEAFBLIND SCOTLAND</h1>
       </div>
-      <div className="flex justify-center items-center">
-        <ul>
-          <li>
-          <button className="p-3 bg-red-600  mt-10 text-4xl rounded-lg text-white">
+      <div className="flex flex-col items-center">
+
+          <button className="p-3 bg-white mt-10 text-4xl rounded-lg text-black border border-red-500 w-64">
             <Link to={"https://www.dbscotland.org.uk"}>LEARN</Link>
           </button>
-          </li>
-          <li>
-            <button className="p-3 bg-red-600 mt-10 text-4xl rounded-lg text-white">
-              <Link to={"/quiz1"}>QUIZ 1</Link>
+
+            <button className="p-3 bg-white mt-10 text-4xl rounded-lg text-black border border-red-500 w-64">
+              <Link to={"/quiz1"}>Choice Quest</Link>
             </button>
-          </li>
-          <li>
-            <button className="p-3 bg-red-600  mt-10 text-4xl rounded-lg text-white">
-              <Link to={"/webcam"}>QUIZ 2</Link>
+
+            <button className="p-3 bg-white  mt-10 text-4xl rounded-lg text-black border border-red-500 w-64">
+              <Link to={"/webcam"}>Gesture Quest</Link>
             </button>
-          </li>
-          <li>
-            <button className="p-3 bg-red-600  mt-10 text-4xl rounded-lg mb-4 text-white">
+
+            <button className="p-3 bg-white  mt-10 text-4xl rounded-lg mb-4 text-black border border-red-500 w-64">
               <Link to={"/How-To"}>HOW</Link>
             </button>
-          </li>
-        </ul>
       </div>
     </div>
   );
 };
 
 export default Home;
-``
