@@ -71,7 +71,10 @@ const WebcamPage = () => {
 
                 if (result.gestures.length > 0) {
                         setScore(result.gestures[0][0].score); 
-                    
+                        
+                if(result.gestures[0][0].score > 0.7) {
+                    console.log(result.gestures[0][0].categoryName, result.gestures[0][0].score);
+                }
                 }
             }
             requestAnimationFrame(detectHands);
