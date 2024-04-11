@@ -2,6 +2,7 @@ import ReactDOM from "react-dom/client";
 import {BrowserRouter as Router, Navigate, Route, Routes} from "react-router-dom";
 import Home from "../src/pages/Home";
 import WebcamPage from "../src/pages/WebcamPage";
+import Quiz1 from "../src/pages/quiz1";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
                       {/* Public Routes: these are available to access at all times. */}
                       <Route path="/" element={<Home />} />
                       <Route path="webcam"  element={<WebcamPage />}/>
+                      <Route path="/quiz1" element={<Quiz1 />} />
                   </Routes>
               </div>
           </div>
