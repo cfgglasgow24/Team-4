@@ -12,7 +12,7 @@ const Home = () => {
       <div className="flex flex-col items-center">
 
           <button className="p-3 bg-white mt-10 text-4xl rounded-lg text-black border border-red-500 w-64">
-            <Link to={"https://www.dbscotland.org.uk"}>LEARN</Link>
+            <Link to={"https://www.dbscotland.org.uk"}>Learn</Link>
           </button>
 
             <button className="p-3 bg-white mt-10 text-4xl rounded-lg text-black border border-red-500 w-64">
@@ -24,7 +24,7 @@ const Home = () => {
             </button>
 
             <button className="p-3 bg-white  mt-10 text-4xl rounded-lg mb-4 text-black border border-red-500 w-64">
-              <Link to={"/How-To"}>HOW</Link>
+              <Link to={"/How-To"}>How</Link>
             </button>
       </div>
     </div>
