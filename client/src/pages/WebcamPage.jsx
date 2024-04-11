@@ -1,14 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react';
 
-import { FilesetResolver, HandLandmarker } from "@mediapipe/tasks-vision";
+import { FilesetResolver, GestureRecognizer, HandLandmarker } from "@mediapipe/tasks-vision";
 import hand_landmarker_task from "../models/hand_landmarker.task";
-
-// import * as fp from 'fingerpose';
-
-// import Webcam from 'react-webcam';
-// const handpose = require('@tensorflow-models/handpose');
-
-// require('@tensorflow/tfjs-backend-webgl');
+import gesture_recognizer_task from "../models/gesture_recognizer.task";
 
 const WebcamPage = () => {
 
@@ -18,6 +12,7 @@ const WebcamPage = () => {
 
   useEffect(() => {
     let handLandmarker;
+    let gestureRecognizer;
     let animationFrameId;
 
     const initializeHandDetection = async () => {
@@ -32,6 +27,14 @@ const WebcamPage = () => {
                     runningMode: "video"
                 }
             );
+            gestureRecognizer = await GestureRecognizer.createFromOptions(vision, {
+                baseOptions: { 
+                    modelAssetPath: gesture_recognizer_task,
+                    delegate: "GPU" 
+                },
+                numHands: 2,
+                runningMode: "video",
+            });
             detectHands();
         } catch (error) {
             console.error("Error initializing hand detection:", error);
@@ -59,6 +62,7 @@ const WebcamPage = () => {
   const detectHands = () => {
       if (videoRef.current && videoRef.current.readyState >= 2) {
           const detections = handLandmarker.detectForVideo(videoRef.current, performance.now());
+          const result = gestureRecognizer.recognizeForVideo(videoRef.current, performance.now());
           setHandPresence(detections.handednesses.length > 0);
 
           // Assuming detections.landmarks is an array of landmark objects
@@ -74,6 +78,10 @@ const WebcamPage = () => {
             //   if (gesture.gestures !== undefined && gesture.gestures.length > 0) {
                 drawLandmarks(detections.landmarks);
             //   }
+          }
+
+          if (result.gestures.length > 0) {
+            console.log(result.gestures[0][0].score, " name: ", result.gestures[0][0].categoryName);
           }
 
       }
