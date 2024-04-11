@@ -114,20 +114,23 @@ return () => {
 }, []);
 
   console.log("Starting...");
-
-    return (
-      <>
-        <h1>Camera Test</h1>
-        <div className="gesture" style={{ position: "relative" }}>
-          <video ref={videoRef} autoPlay playsInline/>
-          <canvas ref={canvasRef} style={{backgroundColor: "#111111"}}/>
+  return (
+    <div className='bg-black min-h-screen flex flex-col'>
+        <h1 className="text-white text-5xl text-center mb-8 mt-5">Quiz 2</h1>
+        <div className="flex">
+            <div className="w-2/4">
+                <div className="gesture relative">
+                    <video ref={videoRef} autoPlay playsInline/>
+                    <canvas ref={canvasRef} className="absolute top-0 left-0 bg-gray-900" />
+                </div>
+                <p className="text-white">Gestures</p>
+            </div>
+            <div className="w-2/4 flex items-center justify-center">
+                <div className="text-white text-9xl">A</div> {/* Replace 'A' with your desired letter */}
+            </div>
         </div>
-        <p>
-          Gestures
-        </p>
-      </>
-    )
-  }
-  
-  export default WebcamPage
-  
+    </div>
+);
+};
+
+export default WebcamPage;
